@@ -11,13 +11,22 @@ import java.util.List;
 //Add a method shuffle to shuffle the deck.
 
 public class Deck {
-private List<Card> deck;
+private List<Card> deckList;
 
 	public static void main(String[] args) {
 		Deck test = new Deck();
 		test.makeDeck();
 		System.out.println(test.numberOfCardsInDeck());
 		System.out.println();
+		
+		test.shuffleDeck();
+		
+		Card topCard;
+		for (int i = 0; i < 52; i++) {
+			topCard = test.dealCard();
+			System.out.println(topCard.toString());
+			System.out.println(test.numberOfCardsInDeck());
+		}
 
 			
 		}
@@ -32,29 +41,28 @@ private List<Card> deck;
 	public void makeDeck() {
 		Suit[] suitArr = Suit.values();
 		Rank[] rankArr = Rank.values();
-		deck = new ArrayList<>();
+		deckList = new ArrayList<>();
 		for (Suit suit : suitArr) {
 			for (Rank rank : rankArr) {
 				Card card = new Card(suit, rank);
-				deck.add(card);
+				deckList.add(card);
 			}
 //			System.out.println(deck.size());
 		}
-
 	}
 
 	public int numberOfCardsInDeck() {
-		return deck.size();
+		return deckList.size();
 
 	}
 
 	public Card dealCard() {
-		Card topCard = deck.remove(0);
+		Card topCard = deckList.remove(0);
 		return topCard;
 	}
 
 	public void shuffleDeck() {
-		Collections.shuffle(deck);
+		Collections.shuffle(deckList);
 	}
 	
 	
