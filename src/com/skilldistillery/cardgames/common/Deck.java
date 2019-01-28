@@ -13,30 +13,32 @@ import java.util.List;
 public class Deck {
 private List<Card> deckList;
 
-	public static void main(String[] args) {
-		Deck test = new Deck();
-		test.makeDeck();
-		System.out.println(test.numberOfCardsInDeck());
-		System.out.println();
+//	public static void main(String[] args) {
+//		Deck test = new Deck();
+//		test.makeDeck();
+//		System.out.println(test.numberOfCardsInDeck());
+//		System.out.println();
+//		
+//		test.shuffleDeck();
+//		
+//		Card topCard;
+//		for (int i = 0; i < 52; i++) {
+//			topCard = test.dealCard();
+//			System.out.println(topCard.toString());
+//			System.out.println(test.numberOfCardsInDeck());
+//		}
+//
+//			
+//		}
+
+	
+	
+	
+
+	
+	public void Deck() {
 		
-		test.shuffleDeck();
-		
-		Card topCard;
-		for (int i = 0; i < 52; i++) {
-			topCard = test.dealCard();
-			System.out.println(topCard.toString());
-			System.out.println(test.numberOfCardsInDeck());
-		}
-
-			
-		}
-
-	
-	
-	
-
-	
-	public void Deck() {}
+	}
 	
 	public void makeDeck() {
 		Suit[] suitArr = Suit.values();
@@ -47,7 +49,7 @@ private List<Card> deckList;
 				Card card = new Card(suit, rank);
 				deckList.add(card);
 			}
-//			System.out.println(deck.size());
+//			System.out.println(deckList.size());
 		}
 	}
 
@@ -55,7 +57,11 @@ private List<Card> deckList;
 		return deckList.size();
 
 	}
-
+	
+	public void clearDeckList() {
+	deckList = null;
+	}
+	
 	public Card dealCard() {
 		Card topCard = deckList.remove(0);
 		return topCard;

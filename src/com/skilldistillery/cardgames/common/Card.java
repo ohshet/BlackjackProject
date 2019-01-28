@@ -8,6 +8,8 @@ package com.skilldistillery.cardgames.common;
 public class Card {
 	private Suit suit;
 	private Rank rank;
+	private String symbol;
+	private String number;
 
 	@Override
 	public int hashCode() {
@@ -40,14 +42,30 @@ public class Card {
 	public Card(Suit suit, Rank rank) {
 		this.suit = suit;
 		this.rank = rank;
+		this.symbol = suit.getSymbol();
+		this.number = rank.getNumber();
 	}
 
 	@Override
 	public String toString() {
-		return (this.rank + " of " + this.suit);
+
+//		return this.number + this.symbol;
+		return
+				" ------" + "\n" +
+				"|" + this.symbol + "     |" + "\n" +
+//				"|      |" + "\n" +
+				"|  " + this.number + "  |" + "\n" +
+//				"|      |" + "\n" +
+				"|     " + this.symbol + "|" + "\n" +
+				" ------" + "\n" ;
+		
+		
+		
 	}
 
 	public int getValue() {
 		return rank.getValue();
 	}
+
+
 }
