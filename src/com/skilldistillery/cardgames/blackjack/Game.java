@@ -9,7 +9,7 @@ public class Game {
 	private Player player;
 	private Card cardFromDealer;
 	private boolean hideCard, handOver;
-	private int playerTotal, dealerTotal, hits;
+	private int playerTotal, dealerTotal;
 	Scanner kb;
 
 	public Game() {
@@ -124,15 +124,13 @@ public class Game {
 			handOver = true;
 			displayCards(hideCard);
 			System.out.println("DEALER BLACKJACK AND PLAYER BLACKJACK!!!  YOU PUSH!!!");
-		}
-		else if (playerTotal == 21) {
+		} else if (playerTotal == 21) {
 			hideCard = false;
 			handOver = true;
 			displayCards(hideCard);
 			System.out.println("BLACKJACK!!! YOU WIN!!!");
 
-		} 
-		else if (dealerTotal == 21) {
+		} else if (dealerTotal == 21) {
 			hideCard = false;
 			handOver = true;
 			displayCards(hideCard);
@@ -143,7 +141,6 @@ public class Game {
 
 	private void playersTurn() {
 		String userInput = "";
-		hits = 0;
 		playerTotal = player.getPlayerTotal();
 		while (!userInput.equals("S") && playerTotal < 21) {
 			System.out.println("Do you want to (S)tay or (H)it?");
@@ -153,7 +150,6 @@ public class Game {
 			case "h":
 			case "Hit":
 			case "hit":
-				hits++;
 				cardFromDealer = dealer.dealCard();
 				player.addCardToPlayerHand(cardFromDealer);
 				displayCards(hideCard);
@@ -187,8 +183,8 @@ public class Game {
 			System.out.println("There are only " + cardsRemaining + " cards left in the deck.");
 			String shuffleKey = "";
 			while (!shuffleKey.equalsIgnoreCase("S")) {
-			System.out.println("Press \"S\" to shuffle");
-			shuffleKey = kb.next();
+				System.out.println("Press \"S\" to shuffle");
+				shuffleKey = kb.next();
 			}
 			dealer.clearDeck();
 			dealer.dealerInit();

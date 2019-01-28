@@ -28,9 +28,7 @@ public class BlackjackHand extends Hand {
 		 handString =
 				" ------" + "\n" +
 				"|      |" + "\n" +
-//				"|      |" + "\n" +
 				"|      |" + "\n" +
-//				"|      |" + "\n" +
 				"|      |" + "\n" +
 				" ------" + "\n";
 			i++;

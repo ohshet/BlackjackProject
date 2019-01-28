@@ -4,7 +4,6 @@ import java.util.List;
 
 public abstract class Hand {
 
-//	protected List<Card> hand = new ArrayList<>();
 	protected List<Card> hand;
 
 	public Hand() {
@@ -19,10 +18,6 @@ public abstract class Hand {
 	public void clearHand() {
 		hand.clear();
 	}
-
-//	public List<Card> getCards() {
-//		return hand;
-//	}
 
 	public String toString() {
 		String handString = "";

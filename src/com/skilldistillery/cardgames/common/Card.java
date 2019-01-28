@@ -1,9 +1,4 @@
 package com.skilldistillery.cardgames.common;
-//A card has a Suit and Rank. Set these in the constructor.
-
-//Generate the methods hashCode and equals
-//Add a toString which says rank + " of " + suit.
-//Add a method getValue to return the card's numeric value.
 
 public class Card {
 	private Suit suit;
@@ -49,23 +44,13 @@ public class Card {
 	@Override
 	public String toString() {
 
-//		return this.number + this.symbol;
-		return
-				" ------" + "\n" +
-				"|" + this.symbol + "     |" + "\n" +
-//				"|      |" + "\n" +
-				"|  " + this.number + "  |" + "\n" +
-//				"|      |" + "\n" +
-				"|     " + this.symbol + "|" + "\n" +
-				" ------" + "\n" ;
-		
-		
-		
+		return " ------" + "\n" + "|" + this.symbol + "     |" + "\n" + "|  " + this.number + "  |" + "\n" + "|     "
+				+ this.symbol + "|" + "\n" + " ------" + "\n";
+
 	}
 
 	public int getValue() {
 		return rank.getValue();
 	}
-
 
 }

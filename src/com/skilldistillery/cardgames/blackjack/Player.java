@@ -22,15 +22,15 @@ public class Player {
 		playerHand.addCard(card);
 
 	}
-	
+
 	public String getPlayerHand() {
 		return "Player has: " + playerHand.getHandValue() + "\n" + playerHand.toString();
 	}
-	
+
 	public int getPlayerTotal() {
 		return playerHand.getHandValue();
 	}
-	
+
 	public void clearHand() {
 		playerHand.clearHand();
 	}

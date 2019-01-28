@@ -60,7 +60,7 @@ public class Dealer {
 	public void clearHand() {
 		dealerHand.clearHand();
 	}
-	
+
 	public void clearDeck() {
 		deck.clearDeckList();
 	}
